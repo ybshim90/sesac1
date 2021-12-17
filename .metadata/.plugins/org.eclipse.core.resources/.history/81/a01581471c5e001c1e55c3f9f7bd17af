@@ -1,0 +1,22 @@
+
+public class TestBookDao {
+
+	public static void main(String[] args) {
+		test_insert();
+		test_selectAll();
+		test_count();
+	}
+
+	private static void test_count() {
+		
+	}
+
+	private static void test_selectAll() {
+		
+	}
+
+	private static void test_insert() {
+		
+	}
+
+}

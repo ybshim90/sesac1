@@ -1,0 +1,50 @@
+package day_20211215_mybatis;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class TestMybatis {
+
+	public static void main(String[] args) throws IOException {
+		String resource = "mybatis-config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		
+		try (SqlSession session = sqlSessionFactory.openSession()) {
+			List<MemberVo> memList  = session.selectList("member.selectAll");
+			for (MemberVo vo : memList) {
+				System.out.println(vo);
+			}
+			
+		}
+		
+//		try (SqlSession session = sqlSessionFactory.openSession()) {
+//		int cnt = session.selectOne("member.countAll");
+//		System.out.println(cnt);
+		
+//		try (SqlSession session = sqlSessionFactory.openSession(true)) {//true->commit
+//			int no = 20;
+//			session.insert("member.delete",no);
+//			System.out.println("삭제성공");
+//		}
+		
+		
+//		try (SqlSession session = sqlSessionFactory.openSession(true)) {//true->commit
+//			MemberVo vo = new MemberVo(20,"최길동","010-221","유저","서울");
+//			session.insert("member.insertMember",vo);
+//			System.out.println("등록성공");
+//		}
+		
+//		try (SqlSession session = sqlSessionFactory.openSession()) {
+		
+//			MemberVo vo = session.selectOne("member.selectMember", 1);
+//			System.out.println(vo);
+//		}
+	}
+}

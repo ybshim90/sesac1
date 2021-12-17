@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="jsp/form1.jsp">
+			사용할 아이디
+		</form>
+	</body>
+</html>

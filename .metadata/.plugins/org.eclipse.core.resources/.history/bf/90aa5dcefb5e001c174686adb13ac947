@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="jsp/form1.jsp" method="post">
+			<fieldset>
+				<legend>계정정보</legend>
+				<label> 사용할 아이디
+					<input type="text" name="memid">
+				</label><br>
+				
+				<label for="id_pw">사용할 암호</label>
+				<input type="password" name="mempw" id="id_pw"><br>
+				
+				사용할 이름
+				<input type="text" name="memname"><br>
+	
+			</fieldset>
+			
+			<fieldset>
+				<legend>경력</legend>
+				
+				<label>사용할 최종학력
+					<input type="search" name="keyword">
+				</label><br>
+				
+				<label>홈페이지
+					<input type="url" name="homepage">
+				</label><br>
+				
+				<label>태어난해
+					<input type="number" name="birthYear"><br>
+				</label>
+				
+				<label>성별
+					<input type="radio" value="male" name="gender">남자
+					<input type="radio" value="female" name="gender">여자
+				</label><br>
+				
+				<input type="submit" value="등록">
+			</fieldset>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+import member.vo.MemberVo;
+
+public class MemberDao {
+
+	public void insert(MemberVo vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

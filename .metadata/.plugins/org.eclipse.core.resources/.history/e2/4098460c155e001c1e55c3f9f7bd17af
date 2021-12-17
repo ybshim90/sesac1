@@ -1,0 +1,22 @@
+import member.vo.MemberVo;
+
+public class TestMemberDao {
+
+	public static void main(String[] args) {
+//		test_insert();
+		test_printAll();
+	}
+
+	private static void test_insert() {
+		MemberVo vo = new MemberVo(30,"홍30","010-300","30번유저","서울");
+		try {
+			MemberDao dao = new MemberDao();
+			dao.insert(vo);
+			System.out.println("등록성공");
+		} catch (Exception e) {
+			System.out.println("등록실패"+e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
+}

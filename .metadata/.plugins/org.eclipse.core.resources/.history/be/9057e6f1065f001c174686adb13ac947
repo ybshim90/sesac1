@@ -1,0 +1,21 @@
+<%@page import="member.vo.MemberVo"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>member list</title>
+	</head>
+	<body>
+<%
+	static SqlSessionFactory sqlSessionFactory = null;
+
+	List<MemberVo> list = null;
+	try (SqlSession session = sqlSessionFactory.openSession(true)) {
+		list = session.selectList("member.selectAll");
+	}
+%>
+	</body>
+</html>

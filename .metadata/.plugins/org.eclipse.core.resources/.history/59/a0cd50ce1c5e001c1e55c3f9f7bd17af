@@ -1,0 +1,17 @@
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import book.vo.BookVo;
+
+public class BookDao {
+	
+	static SqlSessionFactory sqlSessionFactory = null;
+
+	public void insert(BookVo vo) throws Exception {
+		try (SqlSession session = sqlSessionFactory.openSession(true)) {
+			session.insert("book.insert", vo);
+			System.out.println("저장성공");
+		}
+	}
+
+}

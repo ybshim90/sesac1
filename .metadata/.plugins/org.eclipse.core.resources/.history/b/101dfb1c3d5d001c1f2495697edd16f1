@@ -1,0 +1,10 @@
+package day_20211215_01;
+
+public class TestBookDao {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

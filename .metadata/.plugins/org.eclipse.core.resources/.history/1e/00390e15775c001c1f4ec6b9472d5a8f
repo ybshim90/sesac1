@@ -1,0 +1,11 @@
+package day_20211214_01;
+
+public class testSelectJdbc {
+
+	public static void main(String[] args) {
+		
+		JdbcUtil.getConnection();
+		
+	}
+
+}

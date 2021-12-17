@@ -1,0 +1,54 @@
+package day_20211213_01;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class testMysql {
+
+	public static void main(String[] args) {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("로딩성공");
+			String url = "jdbc:mysql://127.0.0.1/db1";
+			String username = "user1";
+			String pass = "1234";
+			conn = DriverManager.getConnection(url, username, pass);
+			System.out.println("db연결성공");
+			stmt = conn.createStatement();
+//			stmt.executeQuery();
+//			stmt.executeUpdate();
+			String insertSql = "insert into member(no,name,tel,intro,addr)";
+			insertSql += "values(4,'최길동','010-114','네번째','부산')";
+			stmt.executeUpdate(insertSql);
+			System.out.println("등록성공");
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println("jdbc파일없음");
+			e.printStackTrace();
+			
+		} catch (SQLException e) {
+			System.out.println("sql오류");
+			e.printStackTrace();	
+		
+		} finally {
+			try {
+				if(stmt != null)stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				if(conn != null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}			
+		}
+	}
+
+}

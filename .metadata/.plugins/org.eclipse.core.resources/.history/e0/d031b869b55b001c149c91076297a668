@@ -1,0 +1,16 @@
+package test;
+
+
+
+public class test1 {
+
+	public static void main(String[] args) {
+		int[] prices = 
+	}
+	
+    public static int[] solution(int[] prices) {
+        int[] answer = {};
+        return answer;
+    }
+
+}

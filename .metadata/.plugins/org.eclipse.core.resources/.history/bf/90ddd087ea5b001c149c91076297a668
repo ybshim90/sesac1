@@ -1,0 +1,5 @@
+package day_20211213_01;
+
+public sealed class JdbcUtil {
+	
+}

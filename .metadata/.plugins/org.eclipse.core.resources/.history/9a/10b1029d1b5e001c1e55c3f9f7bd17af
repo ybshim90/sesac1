@@ -1,0 +1,10 @@
+
+public class TestBookDao {
+
+	public static void main(String[] args) {
+		test_insert();
+		test_selectAll();
+		test_count();
+	}
+
+}

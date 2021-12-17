@@ -1,0 +1,28 @@
+
+public class TestBookDao {
+
+	public static void main(String[] args) {
+		test_insert();
+		test_selectAll();
+		test_count();
+	}
+
+	private static void test_count() {
+		try {
+			MemberDao dao = new MemberDao();
+			int cnt = dao.count();
+			System.out.println("도서수:"+cnt);
+		} catch (Exception e) {
+			System.out.println("예외발생"+e.getMessage());
+		}
+	}
+
+	private static void test_selectAll() {
+		
+	}
+
+	private static void test_insert() {
+		
+	}
+
+}

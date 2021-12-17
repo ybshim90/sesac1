@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>회사일정</title>
+</head>
+<body>
+	<h1>회사일정</h1>
+	<table border="3">
+	  <tr>
+	    <th>일</th>
+	    <th>월</th>
+	    <th>화</th>
+	    <th>수</th>
+	    <th>목</th>
+	    <th>금</th>
+	    <th>토</th>
+	  </tr>
+	  <tr>
+	    <td>28</td>
+	    <td>29</td>
+	    <td>30</td>
+	    <td>1</td>
+	    <td>2</td>
+	    <td>3</td>
+	    <td>4</td>
+	  </tr>
+	  <tr>
+	    <td>5</td>
+	    <td>6</td>
+	    <td>7</td>
+	    <td>8</td>
+	    <td>9</td>
+	    <td>10</td>
+	    <td>11</td>
+	  </tr>
+	</table>
+
+</body>
+</html>

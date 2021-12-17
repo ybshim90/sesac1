@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="book">
+	
+	
+
+	<insert id="insert" parameterType="book.vo.BookVo">
+		insert into book(isbn,title,publisher,author,price)
+		values(#{isbn},#{title},#{publisher},#{author},#{price})
+	</insert>
+
+	<select id="selectAll" resultType="book.vo.BookVo">
+		select * from book order by isbn	
+	</select>
+	
+	<select id="selectCnt" resultType="int">
+		select count(*) from book	
+	</select>
+	
+</mapper>

@@ -1,0 +1,9 @@
+import book.vo.BookVo;
+
+public class BookDao {
+
+	public void insert(BookVo vo) {
+		
+	}
+
+}

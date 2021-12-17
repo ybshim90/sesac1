@@ -1,0 +1,6 @@
+package day_20211215_01;
+
+public class MemberVo {
+	private String isbn,title,publisher,author;
+	private int price;
+}

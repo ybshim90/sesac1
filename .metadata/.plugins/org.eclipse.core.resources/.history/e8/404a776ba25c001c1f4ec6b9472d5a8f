@@ -1,0 +1,64 @@
+package day_20211214_01;
+
+import java.util.ArrayList;
+
+public class TestMemberDao {
+
+	public static void main(String[] args) {
+		
+//		test_insert();
+//		test_selectAll();
+//		test_findByNo();
+		test_selectAll();
+		test_delete();
+		test_selectAll();
+	}
+
+	private static void test_delete() {
+		try {
+			MemberDao memDao = new MemberDao();
+			memDao.delete(5);
+			System.out.println("삭제성공");
+		} catch (Exception e) {
+			System.out.println("삭제오류 "+e.getMessage());
+		}
+		
+	}
+
+	private static void test_findByNo() {
+		try {
+			MemberDao memDao = new MemberDao();
+			MemberVo vo = memDao.findByNo(4);
+			if(vo==null) {
+				System.out.println("결과값없음");
+			}else {
+				System.out.println(vo);
+			}
+		} catch (Exception e) {
+			System.out.println("검색오류 "+e.getMessage());
+		}
+	}
+
+	private static void test_selectAll() {
+		MemberDao memDao = new MemberDao();
+		try {
+			ArrayList<MemberVo> memList = memDao.selectAll();
+			for (MemberVo vo : memList) {
+				System.out.println(vo);
+			}
+		} catch (Exception e) {
+			System.out.println("전체출력오류 "+e.getMessage());
+		}
+	}
+
+	private static void test_insert() {
+		MemberDao memDao = new MemberDao();
+		MemberVo vo = new MemberVo(10,"홍길동2","010-211","새로운 홍길동","서울 강남");
+		try {
+			memDao.insert(vo);
+			System.out.println("등록완료");
+		} catch (Exception e) {
+			System.out.println("등록실패");
+		}
+	}
+}

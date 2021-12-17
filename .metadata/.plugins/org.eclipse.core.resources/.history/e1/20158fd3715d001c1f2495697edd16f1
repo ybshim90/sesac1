@@ -1,0 +1,207 @@
+package day_12_08;
+import java.util.Scanner;
+public class 도서관_도서대여_관리프로그램 {
+	private static Scanner sc = new Scanner(System.in);
+	private static BookManager bookMgr = new BookManager();
+	private static MemberManager memberMgr = new MemberManager();
+	
+	public static void main(String[] args) {
+		while (true) {
+			메인메뉴출력();
+			int menuNo = sc.nextInt();
+			sc.nextLine();
+			if(menuNo==-999)
+				break;
+			if(menuNo==1)
+				도서관리메뉴();
+			if(menuNo==2)
+				회원관리메뉴();
+		}//end while
+		System.out.println("*** 프로그램 종료 ***");
+	}//end main
+	private static void 회원관리메뉴() {
+		while (true) {
+			회원관리메뉴출력();
+			int menuNo = sc.nextInt();
+			sc.nextLine();
+			if(menuNo==-999)
+				break;
+			if(menuNo==1)
+				회원등록();
+			else if(menuNo==2)
+				회원검색();
+			else if(menuNo==4)
+				회원삭제();
+			else if(menuNo==5)
+				회원전체출력();
+		}
+	}
+	private static void 회원전체출력() {
+		System.out.println("--- 회원전체출력 ---");
+		System.out.println("총저장갯수: "+memberMgr.getList().size());
+		//매니저에서 목록을 추출, 출력
+		for (MemberVo vo : memberMgr.getList()) {
+			System.out.println(vo);
+		}//end for
+		
+	}
+	private static void 회원삭제() {
+		System.out.println("삭제할 id 입력>> ");
+		String id = sc.nextLine();
+		boolean b = memberMgr.remove(id);
+		
+		if( b ) {
+			System.out.println("삭제 성공!");
+		}else {
+			System.out.println("삭제 실패!");
+		}
+		
+	}
+	private static void 회원검색() {
+		while (true) {
+			System.out.println("(1)id검색  (2)이름검색  (-999)이전메뉴");
+			int menuNo = sc.nextInt();
+			sc.nextLine();
+			if (menuNo == -999)
+				break;
+			if(menuNo==1) { // id검색
+				System.out.println("검색할 id 입력>> ");
+				String id = sc.nextLine();
+				MemberVo vo = memberMgr.findById(id);
+				if(vo==null) {
+					System.out.println("검색결과 없음!!");
+				}else {
+					System.out.println("검색결과 1건!");
+					System.out.println(vo.toString());
+				}
+			}
+			else if(menuNo==2) { // 이름검색();
+				System.out.println("검색할 이름 입력>> ");
+				String name = sc.nextLine();
+				MemberVo vo = memberMgr.findByName(name);
+				if(vo==null) {
+					System.out.println("결과 없음!!");
+				}else {
+					System.out.println("검색결과 1건!");
+					System.out.println(vo.toString());
+				}
+			}
+		}//wnd while
+		
+	}
+	private static void 회원등록() {
+		System.out.println("등록할 id 입력");
+		String id = sc.nextLine();
+		if(memberMgr.isExist(id)) {
+			System.out.println("등록된 id입니다.");
+			return;//메서드 종료
+		}
+		System.out.println("이름 입력");
+		String name = sc.nextLine();
+		System.out.println("전화 입력");
+		String tel = sc.nextLine();
+		MemberVo vo = new MemberVo(id, name, tel);
+		memberMgr.add(vo);
+		
+	}
+	private static void 회원관리메뉴출력() {
+		System.out.println("(1)회원등록 (2)회원검색  (3)회원수정  (4)회원삭제  (5)전체출력  (-999)이전메뉴");
+		System.out.println("메뉴번호>> ");
+	}
+	private static void 도서관리메뉴() {
+		while (true) {
+			도서관리메뉴출력();
+			int menuNo = sc.nextInt();
+			sc.nextLine();
+			if(menuNo==-999)
+				break;
+			if(menuNo==1)
+				도서등록();
+			else if(menuNo==2)
+				도서검색();
+			else if(menuNo==4)
+				도서삭제();
+			else if(menuNo==5)
+				도서전체출력();
+			
+		}//end while
+	}
+	private static void 도서전체출력() {
+		System.out.println("--- 도서전체출력 ---");
+		System.out.println("총저장갯수: "+bookMgr.getList().size());
+		//매니저에서 목록을 추출, 출력
+		for (BookVo vo : bookMgr.getList()) {
+			System.out.println(vo);
+		}//end for
+	}//end 도서전체출력
+	private static void 도서삭제() {
+		System.out.println("삭제할 isbn 입력>> ");
+		String isbn = sc.nextLine();
+		boolean b = bookMgr.remove(isbn);
+		
+		if( b ) {
+			System.out.println("삭제 성공!");
+		}else {
+			System.out.println("삭제 실패!");
+		}
+	}
+	private static void 도서검색() {
+		while (true) {
+			System.out.println("(1)isbn검색  (2)제목검색  (-999)이전메뉴");
+			int menuNo = sc.nextInt();
+			sc.nextLine();
+			if (menuNo == -999)
+				break;
+			if(menuNo==1) { // isbn검색
+				System.out.println("검색할 isbn 입력>> ");
+				String isbn = sc.nextLine();
+				BookVo vo = bookMgr.findByIsbn(isbn);
+				if(vo==null) {
+					System.out.println("검색결과 없음!!");
+				}else {
+					System.out.println("검색결과 1건!");
+					System.out.println(vo.toString());
+				}
+			}
+			else if(menuNo==2) { // 제목검색();
+				System.out.println("검색할 제목 입력>> ");
+				String title = sc.nextLine();
+				BookVo vo = bookMgr.findByTitle(title);
+				if(vo==null) {
+					System.out.println("결과 없음!!");
+				}else {
+					System.out.println("검색결과 1건!");
+					System.out.println(vo.toString());
+				}
+			}
+		}//wnd while
+	}//end 도서검색
+	private static void 도서등록() {
+		System.out.println("isbn 입력");
+		String isbn = sc.nextLine();
+		if(bookMgr.isExist(isbn)) {
+			System.out.println("등록된 isbn입니다.");
+			return;//메서드 종료
+		}
+		System.out.println("제목 입력");
+		String title = sc.nextLine();
+		System.out.println("출판사 입력");
+		String pub = sc.nextLine();
+		System.out.println("저자 입력");
+		String author = sc.nextLine();
+		System.out.println("가격 입력");
+		int price = sc.nextInt();
+		sc.nextLine();
+		BookVo vo = new BookVo(isbn, title, pub, author, price);
+		bookMgr.add(vo);
+	}
+	private static void 도서관리메뉴출력() {
+		System.out.println("(1)도서등록 (2)도서검색  (3)도서수정  (4)도서삭제  (5)전체출력  (-999)이전메뉴");
+		System.out.println("메뉴번호>> ");
+	}
+	private static void 메인메뉴출력() {
+		System.out.println("(1)도서관리  (2)회원관리  (3)대여관리  (-999)종료");
+		System.out.println("메뉴번호>> ");
+	}
+	
+}//end class

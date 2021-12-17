@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\user\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2080211723.index
+\day_20211217_01_web\src\main\java
+C:\Users\user\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3879160253.index
+\day_20211217_02_web_mybatis\src\main\java

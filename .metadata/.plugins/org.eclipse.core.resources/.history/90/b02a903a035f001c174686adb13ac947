@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="jsp/form1.jsp" method="get">
+			<fieldset>
+				<legend>계정정보</legend>
+				<label> 사용할 아이디
+					<input type="text" name="memid" placeholder="영어로입력" required="required">
+				</label><br>
+				
+				<label for="id_pw">사용할 암호</label>
+				<input type="password" name="mempw" id="id_pw"><br>
+				
+				사용할 이름
+				<input type="text" name="memname" ><br>
+	
+			</fieldset>
+			
+			<fieldset>
+				<legend>경력</legend>
+				
+				<label>사용할 최종학력
+					<input type="search" name="keyword">
+				</label><br>
+				
+				<label>홈페이지
+					<input type="url" name="homepage" value="http://" readonly="readonly" disabled="disabled">
+				</label><br>
+				
+				<label>태어난해
+					<input type="number" name="birthYear">
+				</label><br>
+				
+				<label>성별
+					<input type="radio" value="male" name="gender">남자
+					<input type="radio" value="female" name="gender">여자
+				</label><br>
+				
+				<label>가입된OTT
+					<input type="checkbox" name="ott" value="netflix">넷플릭스
+					<input type="checkbox" name="ott" value="disney">디즈니
+				</label><br>
+				
+				<label>좋아하는색
+					<input type="color" name="color">
+				</label><br>
+				
+				<label>생일
+					<input type="date" name="birthdate">
+				</label><br>
+				
+				<label>태어난 달
+					<input type="month" name="birthmonth">
+				</label><br>
+				
+				<label>태어난 주
+					<input type="week" name="birth">
+				</label><br>
+				
+				<label>태어난 지역
+					<select name="birth_area">
+						<option>서울</option>
+						<option>경기</option>
+						<option>강원</option>
+						<option>충청</option>
+						<option>해외</option>
+					</select>
+				</label><br>
+				
+				<input type="submit" value="등록">
+				<input type="reset" value="리셋">
+				
+			</fieldset>
+		</form>
+	</body>
+</html>

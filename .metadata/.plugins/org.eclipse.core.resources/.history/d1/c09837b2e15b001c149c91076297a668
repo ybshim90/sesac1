@@ -1,0 +1,29 @@
+package day_20211213_01;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class testMysql {
+
+	public static void main(String[] args) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("로딩성공");
+			String url = "jdbc:mysql://127.0.0.1/db1";
+			String username = "user1";
+			String pass = "1234";
+			Connection conn = DriverManager.getConnection(url, username, pass);
+			System.out.println("db연결성공");
+			Statement stmt = conn.createStatement();
+		} catch (ClassNotFoundException e) {
+			System.out.println("jdbc파일없음");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("sql오류");
+			e.printStackTrace();	
+		}
+	}
+
+}

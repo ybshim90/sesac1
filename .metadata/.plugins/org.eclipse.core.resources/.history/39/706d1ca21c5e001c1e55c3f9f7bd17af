@@ -1,0 +1,14 @@
+import org.apache.ibatis.session.SqlSession;
+
+import book.vo.BookVo;
+
+public class BookDao {
+
+	public void insert(BookVo vo) throws Exception {
+		try (SqlSession session = sqlSessionFactory.openSession(true)) {
+			session.insert("member.insert", vo);
+			System.out.println("저장성공");
+		}
+	}
+
+}

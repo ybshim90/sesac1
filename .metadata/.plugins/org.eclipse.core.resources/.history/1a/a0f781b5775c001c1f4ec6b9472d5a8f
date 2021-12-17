@@ -1,0 +1,24 @@
+package day_20211214_01;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class testSelectJdbc {
+
+	public static void main(String[] args) {
+		
+		try {
+			Connection conn = JdbcUtil.getConnection();
+			conn.prepareStatement(sql);
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println("jdbc driver 파일 없음");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("sql 처리 문제");
+			e.printStackTrace();
+		}
+		
+	}
+
+}
