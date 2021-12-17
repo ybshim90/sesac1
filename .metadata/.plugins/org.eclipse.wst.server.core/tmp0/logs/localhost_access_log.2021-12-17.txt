@@ -107,3 +107,6 @@
 127.0.0.1 - - [17/Dec/2021:16:02:52 +0900] "GET / HTTP/1.1" 404 807
 0:0:0:0:0:0:0:1 - - [17/Dec/2021:16:02:53 +0900] "GET /day_20211217_02_web_mybatis/member_list.jsp HTTP/1.1" 200 144
 0:0:0:0:0:0:0:1 - - [17/Dec/2021:16:05:10 +0900] "GET /day_20211217_02_web_mybatis/member_list.jsp HTTP/1.1" 200 422
+0:0:0:0:0:0:0:1 - - [17/Dec/2021:16:44:57 +0900] "GET /day_20211217_02_web_mybatis/member_list2.jsp HTTP/1.1" 200 724
+0:0:0:0:0:0:0:1 - - [17/Dec/2021:17:20:38 +0900] "GET /day_20211217_02_web_mybatis/intro_css.html HTTP/1.1" 200 385
+0:0:0:0:0:0:0:1 - - [17/Dec/2021:17:22:11 +0900] "GET /day_20211217_02_web_mybatis/intro_css.html HTTP/1.1" 200 445
